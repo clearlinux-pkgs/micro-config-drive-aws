@@ -1,6 +1,6 @@
 Name     : micro-config-drive-aws
 Version  : 1
-Release  : 6
+Release  : 7
 Summary  : Start AWS cloud-config user data helper at boot time
 Group    : Development/Tools
 License  : GPL-3.0
@@ -16,9 +16,9 @@ A config-drive handler for AWS.
 %install
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/lib/systemd/system/multi-user.target.wants
-ln -sf ../ucd-aws.service %{buildroot}/usr/lib/systemd/system/multi-user.target.wants/ucd-aws.service
+ln -sf ../ucd@.service %{buildroot}/usr/lib/systemd/system/multi-user.target.wants/ucd@aws.service
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/systemd/system/multi-user.target.wants/ucd-aws.service
+/usr/lib/systemd/system/multi-user.target.wants/ucd@aws.service
 
